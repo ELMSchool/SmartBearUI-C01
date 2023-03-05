@@ -15,7 +15,7 @@ public class LoginPage {
 	}
 //	@FindBy(id="userName")
 //	public WebElement fullNameInputBox;
-	////ctl00_MainContent_login_button
+	
 	
 	@FindBy (id="ctl00_MainContent_username")
 	public WebElement userNameInput;
