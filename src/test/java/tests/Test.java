@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.github.javafaker.Faker;
@@ -134,9 +135,10 @@ public class Test {
 		//16.Locate cardnumber input box and enter values by using Faker 
 		String fakeCard = new Faker().phoneNumber().cellPhone();
 		element.cardNumber.sendKeys(fakeCard);
-		//17.Locate cardnumber input box and enter values by using Faker 
-				String fakeExp = new F;
-				element.cardNumber.sendKeys(fakeCard);
+		//17.Locate expdate input box and enter values by using Faker 
+//				String fakeExp = new Faker().date();
+//				element.cardNumber.sendKeys(fakeCard);
+		Actions action = new Actions(Driver.getDriver());
 
 
 	}

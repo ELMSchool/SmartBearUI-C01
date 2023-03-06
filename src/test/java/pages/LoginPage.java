@@ -25,7 +25,17 @@ public class LoginPage {
 	
 	@FindBy (id="ctl00_MainContent_login_button")
 	public WebElement loginButton;
+	@FindBy (id="ctl00_MainContent_status")
+	public WebElement errorMsgLabel;
 	
+public void loginMethod(String username,String password) {
+	
+	userNameInput.sendKeys(username);
+	userPasswordInput.sendKeys(password);
+	loginButton.click();
+}	
 	
 
 }
+
+
