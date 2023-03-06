@@ -27,10 +27,11 @@
 		</dependency>
 
 
-		<dependency>
+<!-- 	<dependency>
 			<groupId>school.elm</groupId>
 			<artifactId>elm-selenium-C01-practice</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		-->	
 	</dependencies>
 </project>
