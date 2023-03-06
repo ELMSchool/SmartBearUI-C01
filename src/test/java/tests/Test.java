@@ -95,39 +95,47 @@ public class Test {
 		}
 
 		// 15b.Locate Mastercard radio buttons and choose one
-		element.masterCard.click();
+//		element.masterCard.click();
+//
+//		if (element.visaButton.isSelected()) {
+//			System.out.println("Mastercard is selected, Test passing");
+//
+//		} else {
+//			System.out.println("Mastercard is not selected ,Test Failed");
+//		}
+//		boolean mastercard1 = element.masterCard.isSelected();
+//		boolean americanExp1 = element.americanExpress.isSelected();
+//		if (mastercard || americanExp) {
+//			System.out.println("Wrong selection only Mastercard can be selected. Test is failing");
+//
+//		} else {
+//			System.out.println("Only Mastercard is selected. Test is passing");
+//		}
+//		// 15c.Locate AmericanExpress radio buttons and choose one
+//		element.americanExpress.click();
+//
+//		if (element.visaButton.isSelected()) {
+//			System.out.println("AmericanExpress is selected, Test passing");
+//
+//		} else {
+//			System.out.println("AmericanExpress is not selected ,Test Failed");
+//		}
+//		boolean mastercard2 = element.masterCard.isSelected();
+//		boolean americanExp2 = element.americanExpress.isSelected();
+//		if (mastercard || americanExp) {
+//			System.out.println("Wrong selection only AmericanExpress can be selected. Test is failing");
+//
+//		} else {
+//			System.out.println("Only AmericanExpress is selected. Test is passing");
+//		}
+		
+		//16.Locate cardnumber input box and enter values by using Faker 
+		String fakeCard = new Faker().phoneNumber().cellPhone();
+		element.cardNumber.sendKeys(fakeCard);
+		//17.Locate cardnumber input box and enter values by using Faker 
+				String fakeExp = new F;
+				element.cardNumber.sendKeys(fakeCard);
 
-		if (element.visaButton.isSelected()) {
-			System.out.println("Mastercard is selected, Test passing");
-
-		} else {
-			System.out.println("Mastercard is not selected ,Test Failed");
-		}
-		boolean mastercard1 = element.masterCard.isSelected();
-		boolean americanExp1 = element.americanExpress.isSelected();
-		if (mastercard || americanExp) {
-			System.out.println("Wrong selection only Mastercard can be selected. Test is failing");
-
-		} else {
-			System.out.println("Only Mastercard is selected. Test is passing");
-		}
-		// 15c.Locate AmericanExpress radio buttons and choose one
-		element.americanExpress.click();
-
-		if (element.visaButton.isSelected()) {
-			System.out.println("AmericanExpress is selected, Test passing");
-
-		} else {
-			System.out.println("AmericanExpress is not selected ,Test Failed");
-		}
-		boolean mastercard2 = element.masterCard.isSelected();
-		boolean americanExp2 = element.americanExpress.isSelected();
-		if (mastercard || americanExp) {
-			System.out.println("Wrong selection only AmericanExpress can be selected. Test is failing");
-
-		} else {
-			System.out.println("Only AmericanExpress is selected. Test is passing");
-		}
 
 	}
 

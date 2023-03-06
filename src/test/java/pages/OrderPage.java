@@ -13,7 +13,7 @@ public class OrderPage {
 		PageFactory.initElements(Driver.getDriver(), this);
 
 	}
-	//ctl00_MainContent_fmwOrder_cardList_0
+	//ctl00_MainContent_fmwOrder_TextBox1
 	@FindBy (id="ctl00_MainContent_fmwOrder_ddlProduct")
 	public WebElement dropDown;
 	
@@ -47,5 +47,10 @@ public class OrderPage {
 	@FindBy (id="ctl00_MainContent_fmwOrder_cardList_2")
 	public WebElement americanExpress;
 
+	@FindBy (id="ctl00_MainContent_fmwOrder_TextBox6")
+	public WebElement cardNumber;
+	@FindBy (id="ctl00_MainContent_fmwOrder_TextBox1")
+	public WebElement expDate;
+	
 
 }
