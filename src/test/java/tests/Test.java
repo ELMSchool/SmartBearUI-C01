@@ -32,12 +32,12 @@ public class Test {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		OrderPage element = new OrderPage();
+		OrderPage orderPage = new OrderPage();
 		LoginPage credential = new LoginPage();
 
 		//Changes
 		//hello
-		Thread.sleep(2000);
+		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
 		// 2.We created object of Loginpage and we stored login input box location
@@ -57,39 +57,39 @@ public class Test {
 		// 7.Located dropdown and located values of products and selected "FamilyAlbum"
 		WebElement dropDown = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
 		dropDown.click();
-		Select select = new Select(dropDown);
+		Select select = new Select(orderPage.dropDownProduct);
 		select.selectByValue("FamilyAlbum");
 		// 8.Located quantity box and sendkey value
-		element.quantityBox.sendKeys(Keys.BACK_SPACE);
-		element.quantityBox.sendKeys("20");
+		orderPage.quantityBox.sendKeys(Keys.BACK_SPACE);
+		orderPage.quantityBox.sendKeys("20");
 		// 9.locate calculate button and click
-		element.calculateButton.click();
+		orderPage.calculateButton.click();
 		// 10.locate customername inbox and send value by faker
 		String fakename = new Faker().name().firstName();
-		element.custName.sendKeys(fakename);
+		orderPage.custName.sendKeys(fakename);
 		// 11.locate street box and send value by faker
 		String fakeStreet = new Faker().address().streetAddress();
-		element.street.sendKeys(fakeStreet);
+		orderPage.street.sendKeys(fakeStreet);
 		// 12.locate city box and send value by faker
 		String fakeCity = new Faker().address().city();
-		element.city.sendKeys(fakeCity);
+		orderPage.city.sendKeys(fakeCity);
 		// 13.locate state box and send value by faker
 		String fakeState = new Faker().address().state();
-		element.State.sendKeys(fakeState);
+		orderPage.State.sendKeys(fakeState);
 		// 14.locate zipcode box and send value by faker
 		String fakezip = new Faker().address().zipCode();
-		element.zip.sendKeys(fakezip);
+		orderPage.zip.sendKeys(fakezip);
 		// 15a.Locate visa radio buttons and choose one (Lead by Refia)
-		element.visaButton.click();
+		orderPage.visaButton.click();
 
-		if (element.visaButton.isSelected()) {
+		if (orderPage.visaButton.isSelected()) {
 			System.out.println("Visa is selected, Test passing");
 
 		} else {
 			System.out.println("Visa is not selected ,Test Failed");
 		}
-		boolean mastercard = element.masterCard.isSelected();
-		boolean americanExp = element.americanExpress.isSelected();
+		boolean mastercard = orderPage.masterCard.isSelected();
+		boolean americanExp = orderPage.americanExpress.isSelected();
 		if (mastercard || americanExp) {
 			System.out.println("Wrong selection only Visa can be selected. Test is failing");
 
@@ -134,7 +134,7 @@ public class Test {
 		
 		//16.Locate cardnumber input box and enter values by using Faker 
 		String fakeCard = new Faker().phoneNumber().cellPhone();
-		element.cardNumber.sendKeys(fakeCard);
+		orderPage.cardNumber.sendKeys(fakeCard);
 		//17.Locate expdate input box and enter values by using Faker 
 //				String fakeExp = new Faker().date();
 //				element.cardNumber.sendKeys(fakeCard);

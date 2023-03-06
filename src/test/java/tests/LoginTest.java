@@ -39,4 +39,21 @@ public class LoginTest {
 		Driver.closeDriver();
 		
 	}
+	
+	public static void testLoginWithEmptyCredentials() {
+		//
+		LoginPage loginpage = new LoginPage();
+		
+		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
+		loginpage.loginMethod(ConfigReader.getPropertyValue(""), ConfigReader.getPropertyValue(""));
+		if(loginpage.errorMsgLabel.getText().equals("Invalid Login or Password.")){
+			System.out.println("Passed");
+			
+		}else {
+			System.out.println("Failed");
+		}
+		Driver.closeDriver();
+		
+	}
+	
 }

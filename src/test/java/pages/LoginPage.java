@@ -15,27 +15,23 @@ public class LoginPage {
 	}
 //	@FindBy(id="userName")
 //	public WebElement fullNameInputBox;
-	
-	
-	@FindBy (id="ctl00_MainContent_username")
+
+	@FindBy(id = "ctl00_MainContent_username")
 	public WebElement userNameInput;
-	
-	@FindBy (id="ctl00_MainContent_password")
+
+	@FindBy(id = "ctl00_MainContent_password")
 	public WebElement userPasswordInput;
-	
-	@FindBy (id="ctl00_MainContent_login_button")
+
+	@FindBy(id = "ctl00_MainContent_login_button")
 	public WebElement loginButton;
-	@FindBy (id="ctl00_MainContent_status")
+	@FindBy(id = "ctl00_MainContent_status")
 	public WebElement errorMsgLabel;
-	
-public void loginMethod(String username,String password) {
-	
-	userNameInput.sendKeys(username);
-	userPasswordInput.sendKeys(password);
-	loginButton.click();
-}	
-	
+
+	public void loginMethod(String username, String password) {
+
+		userNameInput.sendKeys(username);
+		userPasswordInput.sendKeys(password);
+		loginButton.click();
+	}
 
 }
-
-

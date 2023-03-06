@@ -15,7 +15,7 @@ public class OrderPage {
 	}
 	//ctl00_MainContent_fmwOrder_TextBox1
 	@FindBy (id="ctl00_MainContent_fmwOrder_ddlProduct")
-	public WebElement dropDown;
+	public WebElement dropDownProduct;
 	
 	@FindBy (id="ctl00_MainContent_fmwOrder_txtQuantity")
 	public WebElement quantityBox;
