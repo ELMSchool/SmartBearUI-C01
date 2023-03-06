@@ -16,8 +16,8 @@ import org.openqa.selenium.support.ui.Select;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 
-import pages.FormPage;
-import utils.ConfReader;
+
+import utils.ConfigReader;
 import utils.Driver;
 
 import pages.LoginPage;
