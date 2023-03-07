@@ -24,6 +24,7 @@ public class LoginPage {
 
 	@FindBy(id = "ctl00_MainContent_login_button")
 	public WebElement loginButton;
+	
 	@FindBy(id = "ctl00_MainContent_status")
 	public WebElement errorMsgLabel;
 

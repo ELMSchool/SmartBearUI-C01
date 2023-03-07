@@ -2,13 +2,15 @@ package utils;
 
 import java.util.Scanner;
 
+import pages.OrderPage;
+
 public class CalculateDiscount {
 
 	public static void main(String[] args) {
 
 		discountMyMoney();
-		discountFamilyAlbum();
-		discountScreenSaver();
+		//discountFamilyAlbum();
+		//discountScreenSaver();
 	}
 
 //	If a product is ordered in the ‘Quantity’ of 10 or more,
@@ -16,10 +18,14 @@ public class CalculateDiscount {
 
 	public static void discountMyMoney() {
 
-		Scanner input = new Scanner(System.in);
+//		Scanner input = new Scanner(System.in);
 
-		System.out.println("Please enter the quantity for My Money");
-		int quantity = input.nextInt();
+//		System.out.println("Please enter the quantity for My Money");
+		
+   	OrderPage orderPage = new OrderPage();
+		String sentKey = orderPage.quantityBox.getText();
+		System.out.println(sentKey);
+		int quantity = 20;
 
 		int totalPrice = 100 * quantity;
 		int percentage = 8;

@@ -4,7 +4,8 @@ import pages.LoginPage;
 import utils.ConfigReader;
 import utils.Driver;
 
-public class LoginTest {
+public class LoginPageTest {
+	
 	public static void main(String []args) {
 		
 		testLoginWithValidCredentials();
@@ -13,15 +14,17 @@ public class LoginTest {
 	}
 
 	public static void testLoginWithValidCredentials() {
+		
 		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
 		new LoginPage().loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));
+		
 		if(Driver.getDriver().getTitle().equals("Web Orders")){
 			System.out.println("Passed");
 			
 		}else {
 			System.out.println("Failed");
 		}
-		Driver.closeDriver();
+	//	Driver.closeDriver();
 		
 	}
 	public static void testLoginInvalidCredentials() {
