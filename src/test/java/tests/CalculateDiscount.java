@@ -10,15 +10,15 @@ import org.openqa.selenium.support.ui.Select;
 import pages.OrderPage;
 import utils.Driver;
 
-public class calculateDiscount {
+public class CalculateDiscount {
 
 	public static void main(String[] args) throws InterruptedException {
 
 		LoginPageTest.testLoginWithValidCredentials();
 		selectOrders();
-// 	myMoney();
-//        familyAlbum();
-	screenSaver();
+// 	        myMoney();
+//          familyAlbum();
+		    screenSaver();
 
 		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
@@ -35,7 +35,7 @@ public class calculateDiscount {
 
 	}
 
-	public static  String familyAlbum() {
+	public static String familyAlbum() {
 
 		int percentage = 15;
 		int quantityBox = 0;
@@ -54,7 +54,6 @@ public class calculateDiscount {
 
 		// locate total box
 		String totalBox = orderPage.totalBox.getAttribute("value");
-	
 
 		Integer total = Integer.valueOf(totalBox);
 
@@ -69,10 +68,10 @@ public class calculateDiscount {
 		orderPage.calculateButton.click();
 		return totalBox;
 	}
-	
-	public static  String myMoney() {
 
-		int percentage =8;
+	public static String myMoney() {
+
+		int percentage = 8;
 		int quantityBox = 0;
 
 		OrderPage orderPage = new OrderPage();
@@ -89,7 +88,7 @@ public class calculateDiscount {
 
 		// locate total box
 		String totalBox = orderPage.totalBox.getAttribute("value");
-		
+
 		Integer total = Integer.valueOf(totalBox);
 
 		if (quantityBox >= 10) {
@@ -103,8 +102,8 @@ public class calculateDiscount {
 		orderPage.calculateButton.click();
 		return totalBox;
 	}
-	
-	public static  String screenSaver() {
+
+	public static String screenSaver() {
 
 		int percentage = 10;
 		int quantityBox = 0;
@@ -123,7 +122,6 @@ public class calculateDiscount {
 
 		// locate total box
 		String totalBox = orderPage.totalBox.getAttribute("value");
-		
 
 		Integer total = Integer.valueOf(totalBox);
 
@@ -138,5 +136,5 @@ public class calculateDiscount {
 		orderPage.calculateButton.click();
 		return totalBox;
 	}
-	
+
 }
