@@ -18,14 +18,10 @@ public class CalculateDiscount {
 
 	public static void discountMyMoney() {
 
-//		Scanner input = new Scanner(System.in);
 
-//		System.out.println("Please enter the quantity for My Money");
+     	OrderPage orderPage = new OrderPage();
 		
-   	OrderPage orderPage = new OrderPage();
-		String sentKey = orderPage.quantityBox.getText();
-		System.out.println(sentKey);
-		int quantity = 20;
+		int quantity = 0;
 
 		int totalPrice = 100 * quantity;
 		int percentage = 8;
@@ -40,10 +36,7 @@ public class CalculateDiscount {
 
 	public static void discountFamilyAlbum() {
 
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("Please enter the quantity for Family Album");
-		int quantity = input.nextInt();
+		int quantity = 0;
 
 		int totalPrice = 80 * quantity;
 		int percentage = 15;
@@ -58,11 +51,7 @@ public class CalculateDiscount {
 
 	public static void discountScreenSaver() {
 
-		Scanner input = new Scanner(System.in);
-
-		System.out.println("Please enter the quantity for Screen Saver");
-		int quantity = input.nextInt();
-
+		int quantity = 0;
 		int totalPrice = 20 * quantity;
 		int percentage = 10;
 		if (quantity >= 10) {

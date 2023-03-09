@@ -24,6 +24,9 @@ public class OrderPage {
 	@FindBy (xpath = "//input[@value='Calculate']")
 	public WebElement calculateButton;
 	
+	@FindBy (id="ctl00_MainContent_fmwOrder_txtTotal")
+	public WebElement totalBox;
+	
 	@FindBy (id="ctl00_MainContent_fmwOrder_txtName")
 	public WebElement custName;
 	
