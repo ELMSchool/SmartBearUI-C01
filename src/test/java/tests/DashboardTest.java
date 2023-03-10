@@ -1,4 +1,5 @@
 package tests;
+
 import java.utils.*;
 
 import org.openqa.selenium.By;
@@ -11,24 +12,23 @@ import utils.Driver;
 
 public class DashboardTest {
 
-public static void main(String[] args) {
-	LoginPage loginPage = new LoginPage();
-    DashboardPage welcomeMsg = new DashboardPage();
-    DashboardPage dashBoardChoices = new DashboardPage();
-	
+	public static void main(String[] args) {
+		LoginPage loginPage = new LoginPage();
+		DashboardPage welcomeMsg = new DashboardPage();
+		DashboardPage dashBoardChoices = new DashboardPage();
+
 		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
-		
-	
+
 		loginPage.loginMethod("Tester", "test");
-		
-	if (DashboardPage.welcomeMsg.getText().equals(" Welcome, Tester !")){
-						System.out.println("Passed");
-		}else {
+
+		if (DashboardPage.welcomeMsg.getText().equals(" Welcome, Tester !")) {
+			System.out.println("Passed");
+		} else {
 			System.out.println("Failed");
 		}
-		
+
 //	dashBoardChoices.viewAllOrderButton.click();
 //	dashBoardChoices.viewAllProducts.click();
 	}
-	
+
 }
