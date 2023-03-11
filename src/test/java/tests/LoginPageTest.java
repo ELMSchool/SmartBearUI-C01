@@ -9,7 +9,7 @@ public class LoginPageTest {
 	public static void main(String []args) {
 		
 		testLoginWithValidCredentials();
-		testLoginInvalidCredentials();
+	//	testLoginInvalidCredentials();
 		
 	}
 

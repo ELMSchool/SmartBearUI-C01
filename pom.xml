@@ -7,9 +7,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SmartBearUI</name>
 	<description>Demo of Real Time Project</description>
-
 	<dependencies>
-
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -20,31 +18,10 @@
 			<artifactId>webdrivermanager</artifactId>
 			<version>5.3.2</version>
 		</dependency>
-
-		
-		
-    
-<dependency>
-    <groupId>io.github.bonigarcia</groupId>
-    <artifactId>webdrivermanager</artifactId>
-    <version>5.3.2</version>
-</dependency>
-
 		<dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>
 			<version>1.0.2</version>
 		</dependency>
-
-
-
-	<dependency>
-			<groupId>school.elm</groupId>
-			<artifactId>elm-selenium-C01-practice</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-		</dependency>
-		
 	</dependencies>
-	
-	
 </project>

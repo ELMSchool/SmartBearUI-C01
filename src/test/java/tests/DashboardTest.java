@@ -3,11 +3,13 @@ package tests;
 import org.openqa.selenium.By;
 import pages.DashboardPage;
 import pages.LoginPage;
+import utils.ConfigReader;
 import utils.Driver;
 
 public class DashboardTest {
 
 	public static void main(String[] args) {
+
 
 		LoginPage loginPage = new LoginPage();
 		DashboardPage dashBoardChoices = new DashboardPage();
@@ -17,18 +19,20 @@ public class DashboardTest {
 		verifyviewAllOrderButton();
 		verifyviewAllProductsButton();
 		verifyorderButton();
-		verifylogoutButton();
+ 	    verifylogoutButton();
 	}
 
 	public static void verifyDashBoardPage() {
-		DashboardPage.webOrders = Driver.getDriver().findElement(By.tagName("h1"));
+		
 
 		if (DashboardPage.webOrders.getText().equals("Web Orders")) {
+
 			System.out.println("Passed");
 		} else {
 			System.out.println("Failed");
 		}
-	}
+		}
+	
 
 	public static void verifyviewAllOrderButton() {
 		DashboardPage dashBoardChoices = new DashboardPage();
@@ -57,4 +61,8 @@ public class DashboardTest {
 		dashBoardChoices.logoutButton.click();
 
 	}
+
+
+
+
 }
