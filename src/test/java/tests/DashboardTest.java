@@ -14,7 +14,8 @@ public class DashboardTest {
 		LoginPage loginPage = new LoginPage();
 		DashboardPage dashBoardChoices = new DashboardPage();
 
-		LoginPageTest.testLoginWithValidCredentials();
+		LoginPageTest loginpage = new LoginPageTest();
+		loginpage.testLoginWithValidCredentials();
 		verifyDashBoardPage();
 		verifyviewAllOrderButton();
 		verifyviewAllProductsButton();

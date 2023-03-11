@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.github.javafaker.Faker;
 
+import pages.LoginPage;
 import pages.OrderPage;
 import utils.Driver;
 
@@ -22,8 +23,8 @@ public class OrderPageTest{
 	public static void fillingInformations () {
 				
 		OrderPage orderPage = new OrderPage();
-		
-		LoginPageTest.testLoginWithValidCredentials();
+		LoginPageTest loginpage = new LoginPageTest();
+		loginpage.testLoginWithValidCredentials();
 		
 		WebElement orders = Driver.getDriver().findElement(By.linkText("Order"));
 		orders.click();
