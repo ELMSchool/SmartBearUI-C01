@@ -7,7 +7,7 @@ public class ViewAllProductsPageTest {
 	
 		
 		
-		System.out.println("Print");
+	
 		
 		
 		
