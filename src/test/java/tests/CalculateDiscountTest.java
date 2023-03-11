@@ -1,41 +1,58 @@
 package tests;
 
-import java.util.concurrent.TimeUnit;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import pages.LoginPage;
 import pages.OrderPage;
+import utils.ConfigReader;
 import utils.Driver;
 
-public class CalculateDiscount {
+public class CalculateDiscountTest {
 
-	public static void main(String[] args) throws InterruptedException {
-
-		LoginPageTest.testLoginWithValidCredentials();
-		selectOrders();
-// 	        myMoney();
+//    myMoney();
 //          familyAlbum();
-		    screenSaver();
+//		    screenSaver();
 
-		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
+	@BeforeSuite
+	public void testLoginWithValidCredentials() {
+
+		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
+		new LoginPage().loginMethod(ConfigReader.getPropertyValue("username"),
+				ConfigReader.getPropertyValue("password"));
+
+		if (Driver.getDriver().getTitle().equals("Web Orders")) {
+			System.out.println("Passed");
+
+		} else {
+			System.out.println("Failed");
+		}
 	}
 
-	public static void selectOrders() {
-		OrderPage orderPage = new OrderPage();
+	@BeforeTest
+
+	public void selectOrders() {
+
 		// 6.go to Orders link
 		WebElement orders = Driver.getDriver().findElement(By.linkText("Order"));
 		orders.click();
-		// 7.Located dropdown and located values of products and selected "FamilyAlbum"
+		// 7.Located drop down and located values of products and selected "FamilyAlbum"
 		WebElement dropDown = Driver.getDriver().findElement(By.id("ctl00_MainContent_fmwOrder_ddlProduct"));
 		dropDown.click();
 
 	}
 
-	public static String familyAlbum() {
+	@Test(priority = 0)
+	public void familyAlbum() {
 
 		int percentage = 15;
 		int quantityBox = 0;
@@ -47,6 +64,8 @@ public class CalculateDiscount {
 
 		// 8.Located quantity box and sendkey value
 		orderPage.quantityBox.sendKeys(Keys.BACK_SPACE);
+
+		orderPage.quantityBox.click();
 		orderPage.quantityBox.sendKeys("8");
 
 		// locate calculate button and click
@@ -66,10 +85,11 @@ public class CalculateDiscount {
 
 		// 9.locate calculate button and click
 		orderPage.calculateButton.click();
-		return totalBox;
+//		return totalBox;
 	}
 
-	public static String myMoney() {
+	@Test(priority = 1)
+	public void myMoney() {
 
 		int percentage = 8;
 		int quantityBox = 0;
@@ -100,10 +120,11 @@ public class CalculateDiscount {
 
 		// 9.locate calculate button and click
 		orderPage.calculateButton.click();
-		return totalBox;
+//		return totalBox;
 	}
 
-	public static String screenSaver() {
+	@Test(priority = 2)
+	public void screenSaver() {
 
 		int percentage = 10;
 		int quantityBox = 0;
@@ -134,7 +155,13 @@ public class CalculateDiscount {
 
 		// 9.locate calculate button and click
 		orderPage.calculateButton.click();
-		return totalBox;
+//		return totalBox;
 	}
+	@AfterSuite
+	 public void close() {
+		 
+		 Driver.closeDriver();
+			
+	 }
 
 }

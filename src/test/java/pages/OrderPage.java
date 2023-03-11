@@ -27,6 +27,7 @@ public class OrderPage {
 	@FindBy (id="ctl00_MainContent_fmwOrder_txtTotal")
 	public WebElement totalBox;
 	
+	
 	@FindBy (id="ctl00_MainContent_fmwOrder_txtName")
 	public WebElement custName;
 	
