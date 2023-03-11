@@ -1,10 +1,6 @@
 package tests;
 
-import java.utils.*;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
 import pages.DashboardPage;
 import pages.LoginPage;
 import utils.ConfigReader;
@@ -13,22 +9,60 @@ import utils.Driver;
 public class DashboardTest {
 
 	public static void main(String[] args) {
+
+
 		LoginPage loginPage = new LoginPage();
-		DashboardPage welcomeMsg = new DashboardPage();
 		DashboardPage dashBoardChoices = new DashboardPage();
 
-		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
+		LoginPageTest.testLoginWithValidCredentials();
+		verifyDashBoardPage();
+		verifyviewAllOrderButton();
+		verifyviewAllProductsButton();
+		verifyorderButton();
+ 	    verifylogoutButton();
+	}
 
-		loginPage.loginMethod("Tester", "test");
+	public static void verifyDashBoardPage() {
+		
 
-		if (DashboardPage.welcomeMsg.getText().equals(" Welcome, Tester !")) {
+		if (DashboardPage.webOrders.getText().equals("Web Orders")) {
+
 			System.out.println("Passed");
 		} else {
 			System.out.println("Failed");
 		}
+		}
+	
 
-//	dashBoardChoices.viewAllOrderButton.click();
-//	dashBoardChoices.viewAllProducts.click();
+	public static void verifyviewAllOrderButton() {
+		DashboardPage dashBoardChoices = new DashboardPage();
+
+		dashBoardChoices.viewAllOrderButton.click();
+
 	}
+
+	public static void verifyviewAllProductsButton() {
+		DashboardPage dashBoardChoices = new DashboardPage();
+
+		dashBoardChoices.viewAllProductsButton.click();
+
+	}
+
+	public static void verifyorderButton() {
+		DashboardPage dashBoardChoices = new DashboardPage();
+
+		dashBoardChoices.orderButton.click();
+
+	}
+
+	public static void verifylogoutButton() {
+		DashboardPage dashBoardChoices = new DashboardPage();
+
+		dashBoardChoices.logoutButton.click();
+
+	}
+
+
+
 
 }

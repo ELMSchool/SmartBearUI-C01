@@ -24,11 +24,19 @@
 			<version>1.0.2</version>
 		</dependency>
 		<dependency>
+<<<<<<< HEAD
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.7.1</version>
 			<scope>test</scope>
 		</dependency>
 
+=======
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.7.1</version>
+    <scope>test</scope>
+</dependency>
+>>>>>>> 0944a337bc20b6f9ee70977eeb9b59d5859376bf
 	</dependencies>
 </project>
