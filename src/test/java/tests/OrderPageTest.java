@@ -4,6 +4,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Test;
 
 import com.github.javafaker.Faker;
 
@@ -12,15 +15,15 @@ import pages.OrderPage;
 import utils.Driver;
 
 public class OrderPageTest{
+    
+	@AfterMethod
+    public void closePages() {
+   	Driver.closeDriver();    
+   	}
+  
 	
-	public static void main(String[] args) {
-			
-		testProcessButton ();
-		testResetButton ();
-				
-	}
-	
-	public static void fillingInformations () {
+	@Test
+	public  void fillingInformations () {
 				
 		OrderPage orderPage = new OrderPage();
 		LoginPageTest loginpage = new LoginPageTest();
@@ -52,81 +55,34 @@ public class OrderPageTest{
 		orderPage.State.sendKeys(fakeState);
 		// 14.locate zipcode box and send value		
 		orderPage.zip.sendKeys("53280");
-		// 15a.Locate visa radio buttons and choose one (Lead by Refia)
+		// 15a.Locate visa radio buttons and choose one 
 		orderPage.visaButton.click();
+		Assert.assertTrue(orderPage.visaButton.isSelected(), "Visa is not selected");
+		
+		orderPage.masterCard.click();
+		Assert.assertTrue(orderPage.masterCard.isSelected(), "MasterCard is not selected");
+		
+		orderPage.americanExpress.click();
+		Assert.assertTrue(orderPage.americanExpress.isSelected(), "AmericanExpress is not selected");
 
-		if (orderPage.visaButton.isSelected()) {
-			System.out.println("Visa is selected, Test passing");
-
-		} else {
-			System.out.println("Visa is not selected ,Test Failed");
-		}
-		boolean mastercard = orderPage.masterCard.isSelected();
-		boolean americanExp = orderPage.americanExpress.isSelected();
-		if (mastercard || americanExp) {
-			System.out.println("Wrong selection only Visa can be selected. Test is failing");
-
-		} else {
-			System.out.println("Only visa is selected. Test is passing");
-			
-		}
-
-		// 15b.Locate Mastercard radio buttons and choose one
-//		element.masterCard.click();
-//
-//		if (element.visaButton.isSelected()) {
-//			System.out.println("Mastercard is selected, Test passing");
-//
-//		} else {
-//			System.out.println("Mastercard is not selected ,Test Failed");
-//		}
-//		boolean mastercard1 = element.masterCard.isSelected();
-//		boolean americanExp1 = element.americanExpress.isSelected();
-//		if (mastercard || americanExp) {
-//			System.out.println("Wrong selection only Mastercard can be selected. Test is failing");
-//
-//		} else {
-//			System.out.println("Only Mastercard is selected. Test is passing");
-//		}
-//		// 15c.Locate AmericanExpress radio buttons and choose one
-//		element.americanExpress.click();
-//
-//		if (element.visaButton.isSelected()) {
-//			System.out.println("AmericanExpress is selected, Test passing");
-//
-//		} else {
-//			System.out.println("AmericanExpress is not selected ,Test Failed");
-//		}
-//		boolean mastercard2 = element.masterCard.isSelected();
-//		boolean americanExp2 = element.americanExpress.isSelected();
-//		if (mastercard || americanExp) {
-//			System.out.println("Wrong selection only AmericanExpress can be selected. Test is failing");
-//
-//		} else {
-//			System.out.println("Only AmericanExpress is selected. Test is passing");
-//		}
 		
 		//16.Locate cardnumber input box and enter values
 		orderPage.cardNumber.sendKeys("8327856767230000");
 		//17.Locate expdate input box and enter values		
 		orderPage.expDate.sendKeys("01/24");
 	}
-	
-	public static void testProcessButton () {
+	@Test
+	public  void testProcessButton () {
 		
 		fillingInformations();
 		
 		OrderPage orderPage = new OrderPage();
 		orderPage.processButton.click();
 		//19.Locate and verify order adding text
-		if(orderPage.orderAddedText.getText().equals("New order has been successfully added.")) {
-			System.out.println("Passed");
-		} else {
-			System.out.println("Failed");
-		}
+		Assert.assertEquals(orderPage.orderAddedText.getText(), "New order has been successfully added.","Order has not been processed");
 	}
-	
-	public static void testResetButton () {
+	@Test
+	public  void testResetButton () {
 		
 		fillingInformations();
 		
