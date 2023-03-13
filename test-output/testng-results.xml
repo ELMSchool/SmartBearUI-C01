@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
@@ -56,4 +57,29 @@
       </class> <!-- tests.ViewAllOrdersTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
+=======
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-03-12T18:04:26 CDT" name="Default suite" finished-at="2023-03-12T18:04:34 CDT" duration-ms="8130">
+    <groups>
+    </groups>
+    <test started-at="2023-03-12T18:04:26 CDT" name="Default test" finished-at="2023-03-12T18:04:34 CDT" duration-ms="8130">
+      <class name="tests.OrderPageTest">
+        <test-method signature="fillingInformations()[pri:0, instance:tests.OrderPageTest@769f71a9]" started-at="2023-03-12T18:04:26 CDT" name="fillingInformations" finished-at="2023-03-12T18:04:30 CDT" duration-ms="3913" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fillingInformations -->
+        <test-method signature="testProcessButton()[pri:0, instance:tests.OrderPageTest@769f71a9]" started-at="2023-03-12T18:04:30 CDT" name="testProcessButton" finished-at="2023-03-12T18:04:32 CDT" duration-ms="2159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testProcessButton -->
+        <test-method signature="testResetButton()[pri:0, instance:tests.OrderPageTest@769f71a9]" started-at="2023-03-12T18:04:32 CDT" name="testResetButton" finished-at="2023-03-12T18:04:34 CDT" duration-ms="2022" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testResetButton -->
+      </class> <!-- tests.OrderPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> 922f524b6028fdb6836b1dffc7351a310ba17e8c
 </testng-results>
