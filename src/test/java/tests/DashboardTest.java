@@ -24,9 +24,11 @@ public class DashboardTest {
 
 	public static void verifyDashBoardPage() {
 		
-
-		if (DashboardPage.webOrders.getText().equals("Web Orders")) {
-
+	@Test
+	String  WelcomeMessage = (" Welcome, Tester!");
+System.out.println(WelcomeMessage);
+		if  (DashboardPage.webOrders.getText().equals(WelcomeMessage)){
+	
 			System.out.println("Passed");
 		} else {
 			System.out.println("Failed");
