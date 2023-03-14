@@ -4,58 +4,49 @@ import pages.LoginPage;
 import utils.ConfigReader;
 import utils.Driver;
 
+import java.util.concurrent.TimeUnit;
+
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 public class LoginPageTest {
 	
-	public static void main(String []args) {
-		
-		testLoginWithValidCredentials();
-	//	testLoginInvalidCredentials();
-		
+	LoginPage loginPage;
+	
+	@BeforeMethod
+	public void setUpDriverAndNavigateToUrl() {
+		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
+		Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		loginPage = new LoginPage();
+	}
+	
+	@AfterMethod
+	public void closeDriver() {
+		Driver.closeDriver();
 	}
 
-	public static void testLoginWithValidCredentials() {
+	@Test
+	public void testLoginWithValidCredentials() {
 		
-		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
-		new LoginPage().loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));
-		
-		if(Driver.getDriver().getTitle().equals("Web Orders")){
-			System.out.println("Passed");
-			
-		}else {
-			System.out.println("Failed");
-		}
-	//	Driver.closeDriver();
-		
-	}
-	public static void testLoginInvalidCredentials() {
-		//
-		LoginPage loginpage = new LoginPage();
-		
-		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
-		loginpage.loginMethod(ConfigReader.getPropertyValue("invalidusername"), ConfigReader.getPropertyValue("invalidpassword"));
-		if(loginpage.errorMsgLabel.getText().equals("Invalid Login or Password.")){
-			System.out.println("Passed");
-			
-		}else {
-			System.out.println("Failed");
-		}
-		Driver.closeDriver();
+		loginPage.loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));
+		Assert.assertEquals(Driver.getDriver().getTitle(), "Web Orders","Actual title is not equal to expected title");
 		
 	}
 	
-	public static void testLoginWithEmptyCredentials() {
-		//
-		LoginPage loginpage = new LoginPage();
+	@Test
+	public  void testLoginInvalidCredentials() {
 		
-		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
-		loginpage.loginMethod(ConfigReader.getPropertyValue(""), ConfigReader.getPropertyValue(""));
-		if(loginpage.errorMsgLabel.getText().equals("Invalid Login or Password.")){
-			System.out.println("Passed");
-			
-		}else {
-			System.out.println("Failed");
-		}
-		Driver.closeDriver();
+		loginPage.loginMethod(ConfigReader.getPropertyValue("invalidusername"), ConfigReader.getPropertyValue("invalidpassword"));
+		Assert.assertEquals(loginPage.errorMsgLabel.getText(), "Invalid Login or Password.","Actual title is not equal to expected title");
+	}
+	@Test
+	public  void testLoginWithEmptyCredentials() {
+		
+		
+		loginPage.loginMethod(ConfigReader.getPropertyValue("emptyusername"), ConfigReader.getPropertyValue("emptypassword"));
+		Assert.assertEquals(loginPage.errorMsgLabel.getText(), "Invalid Login or Password.","Actual title is not equal to expected title");
 		
 	}
 	

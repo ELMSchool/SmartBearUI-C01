@@ -13,40 +13,40 @@ public class ViewAllProductsPage {
 		PageFactory.initElements(Driver.getDriver(), this);
 	}
 	
-	@FindBy (xpath="//*[contains(text(),'Product name')]")
+	@FindBy (css="table[class='ProductsTable']>tbody>tr:nth-of-type(1)>th:nth-of-type(1)")
 	public WebElement productNameText;
 	
-	@FindBy (xpath="//*[contains(text(),'Price')]")
+	@FindBy (css="table[class='ProductsTable']>tbody>tr:nth-of-type(1)>th:nth-of-type(2)")
 	public WebElement priceText;
 	
-	@FindBy (xpath="//*[contains(text(),'Discount')]")
+	@FindBy (css="table[class='ProductsTable']>tbody>tr:nth-of-type(1)>th:nth-of-type(3)")
 	public WebElement discountText;
 	
-	@FindBy (xpath = "//*[contains(text(),'MyMoney')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(2)>td:nth-of-type(1)")
 	public WebElement myMoneyText;
 	
-	@FindBy (xpath = "//*[contains(text(),'FamilyAlbum')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(3)>td:nth-of-type(1)")
 	public WebElement familyAlbumText;
 	
-	@FindBy (xpath = "//*[contains(text(),'ScreenSaver')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(1)")
 	public WebElement screenSaverText;
 	
-	@FindBy (xpath = "//*[contains(text(),'$100')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(2)>td:nth-of-type(2)")
 	public WebElement $100Text;
 	
-	@FindBy (xpath = "//*[contains(text(),'$80')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(3)>td:nth-of-type(2)")
 	public WebElement $80Text;
 	
-	@FindBy (xpath = "//*[contains(text(),'$20')]")
+	@FindBy (css = "/table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(2)")
 	public WebElement $20Text;
 	
-	@FindBy (xpath = "//*[contains(text(),'8%')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(2)>td:nth-of-type(3)")
 	public WebElement percentage8Text;
 	
-	@FindBy (xpath = "//*[contains(text(),'15%')]")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(3)>td:nth-of-type(3)")
 	public WebElement percentage15Text;
 	
-	@FindBy (xpath = "//*[contains(text(),'10%')]")
+	@FindBy (xpath = "table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(3)")
 	public WebElement percentage10Text;
 	
 	

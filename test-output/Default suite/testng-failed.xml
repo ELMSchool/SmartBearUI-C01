@@ -3,15 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.CalculateDiscountTest">
+<<<<<<< HEAD
+      <class name="tests.ViewAllOrdersTest">
         <methods>
-          <include name="testLoginWithValidCredentials"/>
-          <include name="selectOrders"/>
-          <include name="close"/>
-          <include name="myMoney"/>
-          <include name="screenSaver"/>
+          <include name="isPaulStillThere"/>
+          <include name="setUpDriverAndNavigateToUrl"/>
         </methods>
-      </class> <!-- tests.CalculateDiscountTest -->
+      </class> <!-- tests.ViewAllOrdersTest -->
+=======
+      <class name="tests.OrderPageTest">
+        <methods>
+          <include name="fillingInformations"/>
+        </methods>
+      </class> <!-- tests.OrderPageTest -->
+>>>>>>> 922f524b6028fdb6836b1dffc7351a310ba17e8c
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

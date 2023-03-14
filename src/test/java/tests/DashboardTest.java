@@ -1,6 +1,8 @@
 package tests;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
 import pages.DashboardPage;
 import pages.LoginPage;
 import utils.ConfigReader;
@@ -14,17 +16,17 @@ public class DashboardTest {
 		LoginPage loginPage = new LoginPage();
 		DashboardPage dashBoardChoices = new DashboardPage();
 
-		LoginPageTest.testLoginWithValidCredentials();
+		LoginPageTest loginpage = new LoginPageTest();
+		loginpage.testLoginWithValidCredentials();
 		verifyDashBoardPage();
 		verifyviewAllOrderButton();
 		verifyviewAllProductsButton();
 		verifyorderButton();
  	    verifylogoutButton();
 	}
-
+@Test
 	public static void verifyDashBoardPage() {
-		
-	@Test
+	
 	String  WelcomeMessage = (" Welcome, Tester!");
 System.out.println(WelcomeMessage);
 		if  (DashboardPage.webOrders.getText().equals(WelcomeMessage)){
