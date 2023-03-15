@@ -1,6 +1,14 @@
 package tests;
 
+import org.testng.annotations.Test;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
 
 import pages.DashboardPage;
@@ -9,35 +17,34 @@ import utils.ConfigReader;
 import utils.Driver;
 
 public class DashboardTest {
+	LoginPage loginPage;
 
-	public static void main(String[] args) {
-
-
-		LoginPage loginPage = new LoginPage();
-		DashboardPage dashBoardChoices = new DashboardPage();
-
-		LoginPageTest loginpage = new LoginPageTest();
-		loginpage.testLoginWithValidCredentials();
-		verifyDashBoardPage();
-		verifyviewAllOrderButton();
-		verifyviewAllProductsButton();
-		verifyorderButton();
- 	    verifylogoutButton();
+	@BeforeSuite
+	public void setUpDriverAndNavigateToUrl() {
+		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
+		Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		loginPage = new LoginPage();
 	}
-@Test
-	public static void verifyDashBoardPage() {
-	
-	String  WelcomeMessage = (" Welcome, Tester!");
-System.out.println(WelcomeMessage);
-		if  (DashboardPage.webOrders.getText().equals(WelcomeMessage)){
-	
-			System.out.println("Passed");
-		} else {
-			System.out.println("Failed");
-		}
-		}
-	
 
+	@BeforeMethod
+	public void testLoginWithValidCredentials() {
+
+		loginPage.loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));
+		Assert.assertEquals(Driver.getDriver().getTitle(), "Web Orders", "Actual title is not equal to expected title");
+
+	}
+
+	@Test
+	public static void verifyDashBoardPage() {
+
+		String expectedMessage = "Web Orders";
+		
+		Assert.assertEquals("Web Orders", expectedMessage);
+		
+	}
+
+	
+	@Test
 	public static void verifyviewAllOrderButton() {
 		DashboardPage dashBoardChoices = new DashboardPage();
 
@@ -45,6 +52,7 @@ System.out.println(WelcomeMessage);
 
 	}
 
+	@Test
 	public static void verifyviewAllProductsButton() {
 		DashboardPage dashBoardChoices = new DashboardPage();
 
@@ -52,6 +60,7 @@ System.out.println(WelcomeMessage);
 
 	}
 
+	@Test
 	public static void verifyorderButton() {
 		DashboardPage dashBoardChoices = new DashboardPage();
 
@@ -59,6 +68,7 @@ System.out.println(WelcomeMessage);
 
 	}
 
+	@Test
 	public static void verifylogoutButton() {
 		DashboardPage dashBoardChoices = new DashboardPage();
 
@@ -66,7 +76,9 @@ System.out.println(WelcomeMessage);
 
 	}
 
-
-
+	@AfterMethod
+	public void closeDriver() {
+		Driver.closeDriver();
+	}
 
 }

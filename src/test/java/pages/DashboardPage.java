@@ -17,7 +17,7 @@ public class DashboardPage {
 	}
 
 	// Finding Element Welcome Test
-	@FindBy(className =("login_info"))
+	@FindBy(tagName =("h1"))
 	public static WebElement webOrders;
 
 	// locate View all orders button
