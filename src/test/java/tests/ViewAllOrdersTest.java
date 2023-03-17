@@ -70,10 +70,11 @@ public class ViewAllOrdersTest {
 		allOrdersPage.updateButton.click();
 
 
-		BrowserUtils.getScreenshot("test_Screenshot1");
+		
 	
 		softAssert.assertEquals(actualPaulBrown, ConfigReader.getPropertyValue(fakename),
 				"Test is passing if Paul Brown is not Equal to John Doe");
+		BrowserUtils.getScreenshot("test_Screenshot1");
 
 		Driver.closeDriver();
 	

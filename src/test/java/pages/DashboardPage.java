@@ -35,5 +35,12 @@ public class DashboardPage {
 	// locate logout button
 	@FindBy(id = "ctl00_logout")
 	public WebElement logoutButton;
+	
+	public WebElement dashboardPages(String text) {
+	WebElement pages = Driver.getDriver().findElement(By.xpath("//*[text()='"+text+"']"));
+		
+		return pages;
+	}
+	
 
 }

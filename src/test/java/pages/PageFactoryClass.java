@@ -2,6 +2,8 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 
+import utils.ValidLogin;
+
 
 public class  PageFactoryClass {
 //	private WebDriver driver;
@@ -21,5 +23,11 @@ public class  PageFactoryClass {
 	}
 	public static ViewAllProductsPage viewAllproductsPage () {
 		return new ViewAllProductsPage();
+	}
+	public static ValidLogin loginFromPageFactory () {
+		return new ValidLogin();
+	}
+	public static DashboardPage dashboardpage () {
+		return new DashboardPage();
 	}
 }

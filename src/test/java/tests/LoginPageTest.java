@@ -14,10 +14,25 @@ import org.testng.annotations.Parameters;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+
 import static pages.PageFactoryClass.*;
 
 import org.testng.annotations.Test;
 public class LoginPageTest {
+	@DataProvider
+	public Object [][] loginInputCredentials(){
+		
+		return new Object[][] {
+			{"Tester","test"},
+			{"invalidUsername","invalidPassword"},
+			{"",""},
+			{"Tester","invalidPassword"},
+			{"invalidUsername","test"},
+			{"Tester",""},
+			{"","test"},
+		};
+	}
 	
 
 	
@@ -35,27 +50,42 @@ public class LoginPageTest {
 
 		Driver.closeDriver();
 	}
-	@Test
-	public  void testLoginWithValidCredentialss() {
+	
+
+	@Test(dataProvider = "loginInputCredentials")
+	public  void testLoginWithDataProvider(String username,String password) {
 		Driver.getDriver().manage().timeouts();
-	PageFactoryClass.loginPage().loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));
+	PageFactoryClass.loginPage().loginMethod(username,password);
 	Assert.assertEquals(Driver.getDriver().getTitle(),AplicationConstants.APPLICATION_TITLE,"Actual title is not equal to expected title");
 	}
 	
 	
-	@Test
-	public  void testLoginInvalidCredentials() {
-		
-		loginPage().loginMethod(ConfigReader.getPropertyValue("invalidusername"), ConfigReader.getPropertyValue("invalidpassword"));	
-		Assert.assertEquals(loginPage().errorMsgLabel.getText(), AplicationConstants.LOGIN_ERROR_MESSAGE,"Actual title is not equal to expected title");
-	}
-	@Test
-	public  void testLoginWithEmptyCredentials() {
-		
-		
-		loginPage().loginMethod(ConfigReader.getPropertyValue("emptyusername"), ConfigReader.getPropertyValue("emptypassword"));
-		Assert.assertEquals(loginPage().errorMsgLabel.getText(), "Invalid Login or Password.","Actual title is not equal to expected title");
-		
-	}
+	
+	
+	//Tests are under this line, datas provided by @Parameter
+	
+//	public  void testLoginWithValidCredentialss() {
+//	Driver.getDriver().manage().timeouts();
+//PageFactoryClass.loginPage().loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));
+//Assert.assertEquals(Driver.getDriver().getTitle(),AplicationConstants.APPLICATION_TITLE,"Actual title is not equal to expected title");
+//}
+	
+//	@Test (description = "Login with valid credentials passed by parameter")
+//	@Parameters ( {"username","password"} )
+//	public  void testLoginWithValidCredentialsByParameter(String username, String password) {
+//		Driver.getDriver().manage().timeouts();
+//	loginPage().loginMethod(username,password);
+//	Assert.assertEquals(Driver.getDriver().getTitle(),AplicationConstants.APPLICATION_TITLE,"Actual title is not equal to expected title");
+//	}
+//	
+//	@Test (description = "Login with valid credentials passed by parameter")
+//	@Parameters ( {"invalidusername","invalidpassword"} )
+//	public  void testLoginWithinValidCredentialsByParameter(String username, String password) {
+//		Driver.getDriver().manage().timeouts();
+//	loginPage().loginMethod(username,password);
+//	Assert.assertEquals(Driver.getDriver().getTitle(),AplicationConstants.APPLICATION_TITLE,"Actual title is not equal to expected title");
+//	}
+	
+	
 	
 }
