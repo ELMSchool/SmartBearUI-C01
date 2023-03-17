@@ -5,12 +5,7 @@
   
 <classes>
  <class name= "tests.CalculateDiscountTest"/>
-      <methods>
-      <include name = "selectOrders"/>
-      <include name = "screenSaver"/>
-      <include name = "familyAlbum"/>
-      <include name = "myMoney"/>
-      </methods>
+      
   </classes>
      
   </test> <!-- CalculateDiscountTest -->

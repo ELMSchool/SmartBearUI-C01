@@ -17,11 +17,11 @@ import utils.Driver;
 
 public class CalculateDiscountTest {
 
-//    myMoney();
+//           myMoney();
 //          familyAlbum();
 //		    screenSaver();
 
-//		Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//	Driver.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
 	@BeforeSuite
 	public void testLoginWithValidCredentials() {

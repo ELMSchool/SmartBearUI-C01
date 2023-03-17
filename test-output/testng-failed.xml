@@ -6,8 +6,19 @@
       <class name="tests.ViewAllOrdersTest">
         <methods>
           <include name="isPaulStillThere"/>
+          <include name="setUpDriverAndNavigateToUrl"/>
         </methods>
       </class> <!-- tests.ViewAllOrdersTest -->
+<<<<<<< HEAD
+=======
+=======
+      <class name="tests.OrderPageTest">
+        <methods>
+          <include name="fillingInformations"/>
+        </methods>
+      </class> <!-- tests.OrderPageTest -->
+>>>>>>> 922f524b6028fdb6836b1dffc7351a310ba17e8c
+>>>>>>> c2f226c30aa0e10f71691bc79510cdcae9dc7ec7
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
