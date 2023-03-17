@@ -5,19 +5,23 @@ import utils.ConfigReader;
 import utils.Driver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 public class LoginPageTest {
 	
 	
 	
-	@AfterMethod
+	@AfterMethod (dependsOnMethods = {"testLoginWithValidCredentials","testLoginInvalidCredentials","testLoginWithEmptyCredentials"})
 	public void closeDriver() throws InterruptedException {
 		Thread.sleep(4000);
 		Driver.closeDriver();
 	}
 
 	@Test
-	public void testLoginWithValidCredentials() {
+	@Parameters({"userxml","passxml"})
+	public  void testLoginWithValidCredentials() {
+		Driver.getDriver().manage().timeouts();
+		
 		
 		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
 		new LoginPage().loginMethod(ConfigReader.getPropertyValue("username"), ConfigReader.getPropertyValue("password"));

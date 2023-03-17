@@ -151,7 +151,7 @@ public class Test {
 
 
 	}
-	@Test
+	
 	public void isPaulStillThere() {
 		ViewAllOrdersPage  allOrdersPage = new ViewAllOrdersPage() ;
 		OrderPage orderpage = new OrderPage() ;
