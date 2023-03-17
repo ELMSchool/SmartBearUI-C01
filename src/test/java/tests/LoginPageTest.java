@@ -8,12 +8,12 @@ import java.util.concurrent.TimeUnit;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-<<<<<<< HEAD
+
 import org.testng.annotations.Parameters;
-=======
+
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
->>>>>>> c2f226c30aa0e10f71691bc79510cdcae9dc7ec7
+
 import org.testng.annotations.Test;
 public class LoginPageTest {
 	
@@ -25,15 +25,12 @@ public class LoginPageTest {
 		Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		loginPage = new LoginPage();
 	}
+
 	
-<<<<<<< HEAD
-	@AfterMethod (dependsOnMethods = {"testLoginWithValidCredentials","testLoginInvalidCredentials","testLoginWithEmptyCredentials"})
-	public void closeDriver() throws InterruptedException {
-		Thread.sleep(4000);
-=======
+
 	@AfterMethod
 	public void closeDriver() {
->>>>>>> c2f226c30aa0e10f71691bc79510cdcae9dc7ec7
+
 		Driver.closeDriver();
 	}
 
