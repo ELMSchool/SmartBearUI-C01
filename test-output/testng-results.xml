@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-17T13:09:07 EDT" name="Default suite" finished-at="2023-03-17T13:09:13 EDT" duration-ms="5759">
+  <suite started-at="2023-03-17T14:24:04 EDT" name="Default suite" finished-at="2023-03-17T14:24:08 EDT" duration-ms="4190">
     <groups>
     </groups>
-    <test started-at="2023-03-17T13:09:07 EDT" name="Default test" finished-at="2023-03-17T13:09:13 EDT" duration-ms="5759">
-      <class name="tests.ViewAllOrdersTest">
-        <test-method is-config="true" signature="setUpDriverAndNavigateToUrl()[pri:0, instance:tests.ViewAllOrdersTest@1622f1b]" started-at="2023-03-17T13:09:07 EDT" name="setUpDriverAndNavigateToUrl" finished-at="2023-03-17T13:09:11 EDT" duration-ms="3486" status="PASS">
+    <test started-at="2023-03-17T14:24:04 EDT" name="Default test" finished-at="2023-03-17T14:24:08 EDT" duration-ms="4190">
+      <class name="tests.LoginPageTest">
+        <test-method is-config="true" signature="setUpDriverAndNavigateToUrl()[pri:0, instance:tests.LoginPageTest@29626d54]" started-at="2023-03-17T14:24:04 EDT" name="setUpDriverAndNavigateToUrl" finished-at="2023-03-17T14:24:06 EDT" duration-ms="2759" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpDriverAndNavigateToUrl -->
-        <test-method signature="isPaulStillThere()[pri:0, instance:tests.ViewAllOrdersTest@1622f1b]" started-at="2023-03-17T13:09:11 EDT" name="isPaulStillThere" finished-at="2023-03-17T13:09:13 EDT" duration-ms="2230" status="PASS">
+        <test-method signature="testLoginWithValidCredentialss()[pri:0, instance:tests.LoginPageTest@29626d54]" started-at="2023-03-17T14:24:06 EDT" name="testLoginWithValidCredentialss" finished-at="2023-03-17T14:24:08 EDT" duration-ms="1235" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- isPaulStillThere -->
-        <test-method is-config="true" signature="closeDriver()[pri:0, instance:tests.ViewAllOrdersTest@1622f1b]" started-at="2023-03-17T13:09:13 EDT" name="closeDriver" finished-at="2023-03-17T13:09:13 EDT" duration-ms="0" status="PASS">
+        </test-method> <!-- testLoginWithValidCredentialss -->
+        <test-method is-config="true" signature="closeDriver()[pri:0, instance:tests.LoginPageTest@29626d54]" started-at="2023-03-17T14:24:08 EDT" name="closeDriver" finished-at="2023-03-17T14:24:08 EDT" duration-ms="148" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeDriver -->
-      </class> <!-- tests.ViewAllOrdersTest -->
+      </class> <!-- tests.LoginPageTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
