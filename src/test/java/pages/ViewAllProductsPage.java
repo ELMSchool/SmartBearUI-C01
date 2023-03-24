@@ -37,7 +37,7 @@ public class ViewAllProductsPage {
 	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(3)>td:nth-of-type(2)")
 	public WebElement $80Text;
 	
-	@FindBy (css = "/table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(2)")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(2)")
 	public WebElement $20Text;
 	
 	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(2)>td:nth-of-type(3)")
@@ -46,7 +46,7 @@ public class ViewAllProductsPage {
 	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(3)>td:nth-of-type(3)")
 	public WebElement percentage15Text;
 	
-	@FindBy (xpath = "table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(3)")
+	@FindBy (css = "table[class='ProductsTable']>tbody>tr:nth-of-type(4)>td:nth-of-type(3)")
 	public WebElement percentage10Text;
 	
 	
