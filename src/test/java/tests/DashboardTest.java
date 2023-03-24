@@ -3,13 +3,11 @@ package tests;
 import org.testng.annotations.Test;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.Test;
+import org.testng.annotations.BeforeTest;
 
 import pages.DashboardPage;
 import pages.LoginPage;
@@ -18,8 +16,9 @@ import utils.Driver;
 
 public class DashboardTest {
 	LoginPage loginPage;
+	
 
-	@BeforeSuite
+	@BeforeMethod
 	public void setUpDriverAndNavigateToUrl() {
 		Driver.getDriver().get(ConfigReader.getPropertyValue("url"));
 		Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -33,7 +32,7 @@ public class DashboardTest {
 		Assert.assertEquals(Driver.getDriver().getTitle(), "Web Orders", "Actual title is not equal to expected title");
 
 	}
-
+	
 	@Test
 	public static void verifyDashBoardPage() {
 

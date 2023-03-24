@@ -3,20 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="tests.ViewAllOrdersTest">
+      <class name="tests.DashboardPageTableTest">
         <methods>
-          <include name="isPaulStillThere"/>
+          <include name="testLoginWithValidCredentials"/>
+          <include name="rows"/>
           <include name="setUpDriverAndNavigateToUrl"/>
+          <include name="closeDriver"/>
         </methods>
-      </class> <!-- tests.ViewAllOrdersTest -->
-=======
-      <class name="tests.OrderPageTest">
-        <methods>
-          <include name="fillingInformations"/>
-        </methods>
-      </class> <!-- tests.OrderPageTest -->
->>>>>>> 922f524b6028fdb6836b1dffc7351a310ba17e8c
+      </class> <!-- tests.DashboardPageTableTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

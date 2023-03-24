@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [SmartBearSuite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="CalculateDiscountTest(failed)">
+  <test thread-count="5" name="DashboardTest(failed)">
     <classes>
-      <class name="tests.CalculateDiscount">
+      <class name="tests.DashboardTest">
         <methods>
-          <include name="selectOrders"/>
+          <include name="verifyviewAllProductsButton"/>
+          <include name="verifylogoutButton"/>
+          <include name="verifyorderButton"/>
+          <include name="setUpDriverAndNavigateToUrl"/>
+          <include name="testLoginWithValidCredentials"/>
+          <include name="closeDriver"/>
+          <include name="verifyviewAllOrderButton"/>
         </methods>
-      </class> <!-- tests.CalculateDiscount -->
+      </class> <!-- tests.DashboardTest -->
     </classes>
-  </test> <!-- CalculateDiscountTest(failed) -->
+  </test> <!-- DashboardTest(failed) -->
 </suite> <!-- Failed suite [SmartBearSuite] -->

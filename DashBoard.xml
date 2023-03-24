@@ -7,7 +7,7 @@
 			<class name="tests.DashboardTest">
 			</class>
 		</classes>
-	</test>
+	</test><!-- DashboardTest -->
 
 
 </suite> <!-- SmartBearSuite -->
