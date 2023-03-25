@@ -36,19 +36,36 @@ public class DashboardPageTableTest {
 
 	@Test
 	public void rows() {
-		int rows = Driver.getDriver().findElements(By.xpath("//*[@id=\"ctl00_MainContent_orderGrid\"]/tbody/tr"))
-				.size();
+		int rows = Driver.getDriver().findElements(By.xpath("//*[@id=\"ctl00_MainContent_orderGrid\"]/tbody/tr")).size();
 		System.out.println("Number of rows are:" + rows);
-		
-//	List<WebElement> names  =Driver.getDriver().findElements(By.xpath("//*[@id=\"ctl00_MainContent_orderGrid\"]/tbody/tr[2]"));
-//		for(int i =1; i<names.size(); i++) {
-//		
-//			System.out.println(names);
+	}
+
+	@Test
+	public void listOfNames() {
+
+		List<WebElement> nameWebelement = Driver.getDriver()
+				.findElements(By.cssSelector("table[class='SampleTable']>tbody>tr>td:nth-of-type(2)"));
+		List<String> nameOfCustomers = new ArrayList<>();
+		for (WebElement each : nameWebelement) {
+			nameOfCustomers.add(each.getText());
+
 		}
-	
-		
-		
-	
+		System.out.println(nameOfCustomers);
+
+	}
+
+	@Test
+	public void listOfProducts() {
+
+		List<WebElement> productWebelement = Driver.getDriver()
+				.findElements(By.cssSelector("table[class='SampleTable']>tbody>tr>td:nth-of-type(3)"));
+		List<String> nameOfProducts = new ArrayList<>();
+		for (WebElement each : productWebelement) {
+			nameOfProducts.add(each.getText());
+		}
+		System.out.println(nameOfProducts);
+
+	}
 
 	@AfterMethod
 	public void closeDriver() {
